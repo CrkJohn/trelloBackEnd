@@ -11,7 +11,7 @@ public class User{
     private String password;
     private List<Dashboard> dashboards;
     private List<Team> teams;
-    private int id;
+    private String id;
     
 
     public User(String name, String email, String initials, String password) {
@@ -20,6 +20,9 @@ public class User{
         this.initials = initials;
         this.password = password;
     }
+
+    public User(){}
+
 
     public String getName() {
         return name;
@@ -67,6 +70,14 @@ public class User{
 
     public void setTeams(List<Team> teams) {
         this.teams = teams;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     

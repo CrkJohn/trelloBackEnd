@@ -17,7 +17,7 @@ public class UserPersistence implements IUserPersistence{
 
     @Override
     public List<User> getUsersList() {
-        return null;
+        return database.getUsersList();
     }
 
     @Override

@@ -15,19 +15,67 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "v1/task")
 public class TaskController {
 
-    private final AtomicLong counter = new AtomicLong();
-
     @Autowired
-	ITaskService task;
-
+	ITaskService iTaskService;
 
 	@GetMapping("/allTask")
 	public ResponseEntity<?> geTasksList(){
 		try {
-			return new ResponseEntity<>(task.geTasksList(),HttpStatus.OK);
+			return new ResponseEntity<>(iTaskService.geTasksList(),HttpStatus.OK);
 		} catch (Exception ex) {
 			return new ResponseEntity<>("ERROR", HttpStatus.NOT_FOUND);
 		}
+	}
+
+	@GetMapping("/task/{id}")
+    public ResponseEntity<?> getTaskById(@PathVariable  String id){
+		try {
+            return new ResponseEntity<>(iTaskService.getTaskById(id),HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>("ERROR", HttpStatus.NOT_FOUND);
+        }
+    
+	}
+	
+	@GetMapping("/user/allTask/{userId}")
+    public ResponseEntity<?> getTasksByUserId(@PathVariable String userId){
+		try {
+            return new ResponseEntity<>(iTaskService.getTasksByUserId(userId),HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>("ERROR", HttpStatus.NOT_FOUND);
+        }
+    
+	}
+		
+	@GetMapping("/user/addTask/{taskId}")
+    public ResponseEntity<?> assignTaskToUser(String taskId,@RequestBody User user){
+		try {
+            return new ResponseEntity<>(iTaskService.assignTaskToUser(taskId, user),HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>("ERROR", HttpStatus.NOT_FOUND);
+        }
+    
+	}
+		
+	@DeleteMapping("/removeTask/{taskId}")
+    public ResponseEntity<?> removeTask(@PathVariable String taskId){
+		try {
+			iTaskService.removeTask(taskId)	;
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>("ERROR", HttpStatus.NOT_FOUND);
+        }
+    
+	}
+	
+	@PutMapping("/updateTask")
+    public ResponseEntity<?> updateTask(@RequestBody Task task){
+		try {
+            return new ResponseEntity<>(iTaskService.updateTask(task),HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>("ERROR", HttpStatus.NOT_FOUND);
+        }
+    
 	}
 
 

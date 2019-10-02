@@ -7,19 +7,23 @@ import java.util.*;
 public class Task{
 
 
-    public List<User> members;
-    public List<Comment> comments;
-    public State state; 
-    public Label label;
-    public Date expirationDate;
-    public String name;
-    public String description;
+    private List<User> members;
+    private List<Comment> comments;
+    private State state; 
+    private Label label;
+    private Date expirationDate;
+    private String name;
+    private String description;
+    private String id;
+
 
 
     public Task(String name, Date expirationDate){
         this.name = name;
         this.expirationDate = expirationDate;
     }
+
+    public Task(){}
 
     public void setName(String name){
         this.name  = name;
@@ -87,6 +91,18 @@ public class Task{
 
     public String getDescription() {
         return description;
+    }
+
+    public void setExpirationDate(Date expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
     
 

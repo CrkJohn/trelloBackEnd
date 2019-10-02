@@ -19,31 +19,31 @@ public class TaskService implements ITaskService {
 
     @Override
     public List<Task> geTasksList() {
-        return null;
+        return iTaskPersistence.geTasksList();
     }
 
     @Override
     public Task getTaskById(String id) {
-        return null;
+        return iTaskPersistence.getTaskById(id);
     }
 
     @Override
     public List<Task> getTasksByUserId(String userId) {
-        return null;
+        return iTaskPersistence.getTasksByUserId(userId);
     }
 
     @Override
     public Task assignTaskToUser(String taskId, User user) {
-        return null;
+        return iTaskPersistence.assignTaskToUser(taskId, user);
     }
 
     @Override
     public void removeTask(String taskId) {
-
+        iTaskPersistence.removeTask(taskId);
     }
 
     @Override
     public Task updateTask(Task task) {
-        return null;
+        return iTaskPersistence.updateTask(task);
     }
 }

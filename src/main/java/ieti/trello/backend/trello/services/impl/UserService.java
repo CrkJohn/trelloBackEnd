@@ -1,6 +1,7 @@
 package ieti.trello.backend.trello.services.impl;
 
 import ieti.trello.backend.trello.entities.User;
+import ieti.trello.backend.trello.persistence.IUserPersistence;
 import ieti.trello.backend.trello.services.ITaskService;
 import ieti.trello.backend.trello.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,31 +14,31 @@ import java.util.List;
 public class UserService implements IUserService {
 
     @Autowired
-    ITaskService iTaskService;
+    IUserPersistence iUserService;
 
 
     @Override
     public List<User> getUsersList() {
-        return null;
+        return iUserService.getUsersList();
     }
 
     @Override
     public User getUserById(String userId) {
-        return null;
+        return iUserService.getUserById(userId);
     }
 
     @Override
     public User createUser(User user) {
-        return null;
+        return iUserService.createUser(user);
     }
 
     @Override
     public User updateUser(User user) {
-        return null;
+        return iUserService.updateUser(user);
     }
 
     @Override
     public void removeUser(String userId) {
-
+        iUserService.removeUser(userId);
     }
 }

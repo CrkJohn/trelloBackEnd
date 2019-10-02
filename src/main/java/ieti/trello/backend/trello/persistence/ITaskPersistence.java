@@ -18,7 +18,7 @@ public interface ITaskPersistence {
         private String name;
         private String description;
 
-    public void addTeam(int idUser, String name , String description);
+    public void addTeuserIdam(int idUser, String name , String description);
     public void addMemberTeam(int idUser, int idTeams , User user);
     public void deleteMemberTeam(int idUser, int idTeams , int idUserDel);
     public void addDashboarTeam(int idUser, int idTeams, Dashboard dashboard);

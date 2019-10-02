@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "v1/user")
 public class UserController {
 
-    private final AtomicLong counter = new AtomicLong();
-
     @Autowired
     IUserService userService;
 
@@ -57,7 +55,7 @@ public class UserController {
         }
     }
 
-    @DeleteMapping("removeUser/{userId}")
+    @DeleteMapping("/removeUser/{userId}")
     public ResponseEntity<?> removeUser(@PathVariable String userId){
         try {
             userService.removeUser(userId);
