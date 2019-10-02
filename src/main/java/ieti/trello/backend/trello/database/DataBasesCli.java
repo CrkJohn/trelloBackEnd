@@ -46,8 +46,10 @@ public class DataBasesCli implements IDataBase {
             Task task = new Task();
             task.setId(String.valueOf(i+1));
             task.setDescription(description[i]);
-            task.setName(names[i]);
+            task.setName(namesTask[i]);
+            task.addMember(new User(names[i],names[i]+"@mail.escuelaing.edu.co",names[i]));
             task.setExpirationDate(new Date());
+            tasks.add(task);
         }
     }
 

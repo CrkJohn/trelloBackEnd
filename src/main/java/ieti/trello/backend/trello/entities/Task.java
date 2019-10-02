@@ -23,7 +23,10 @@ public class Task{
         this.expirationDate = expirationDate;
     }
 
-    public Task(){}
+    public Task(){
+        members = new ArrayList<User>();
+        comments = new ArrayList<Comment>();
+    }
 
     public void setName(String name){
         this.name  = name;
