@@ -22,21 +22,21 @@ public class UserPersistence implements IUserPersistence{
 
     @Override
     public User getUserById(String userId) {
-        return null;
+        return database.getUserById(userId);
     }
 
     @Override
     public User createUser(User user) {
-        return null;
+        return database.createUser(user);
     }
 
     @Override
     public User updateUser(User user) {
-        return null;
+        return database.updateUser(user);
     }
 
     @Override
     public void removeUser(String userId) {
-
+        database.removeUser(userId);
     }
 }

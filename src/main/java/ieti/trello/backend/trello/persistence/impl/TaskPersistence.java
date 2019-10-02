@@ -19,31 +19,31 @@ public class TaskPersistence implements ITaskPersistence {
 
     @Override
     public List<Task> geTasksList() {
-        return null;
+        return database.geTasksList();
     }
 
     @Override
     public Task getTaskById(String id) {
-        return null;
+        return database.getTaskById(id);
     }
 
     @Override
     public List<Task> getTasksByUserId(String userId) {
-        return null;
+        return database.getTasksByUserId(userId);
     }
 
     @Override
     public Task assignTaskToUser(String taskId, User user) {
-        return null;
+        return database.assignTaskToUser(taskId, user);
     }
 
     @Override
     public void removeTask(String taskId) {
-
+        database.removeTask(taskId);
     }
 
     @Override
     public Task updateTask(Task task) {
-        return null;
+        return database.updateTask(task);
     }
 }
